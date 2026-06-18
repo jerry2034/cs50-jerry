@@ -1,1 +1,69 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Mobs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MINECRAFT MOBS</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mobs.html">Mobs</a>
+            <a href="biomes.html">Biomes</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Friendly & Hostile Mobs</h2>
+            <p>Click any mob card to view a short description!</p>
+
+            <div class="grid">
+                <div class="mob-card" data-desc="Cow: Passive mob, drops leather and raw beef. Found in plains biomes.">
+                    <h3>Cow</h3>
+                    <p>Passive Mob</p>
+                </div>
+                <div class="mob-card" data-desc="Zombie: Hostile undead mob, spawns at night. Attacks players and villagers.">
+                    <h3>Zombie</h3>
+                    <p>Hostile Mob</p>
+                </div>
+                <div class="mob-card" data-desc="Sheep: Passive mob, gives wool when sheared. Comes in many colors.">
+                    <h3>Sheep</h3>
+                    <p>Passive Mob</p>
+                </div>
+                <div class="mob-card" data-desc="Creeper: Explosive hostile mob, sneaks up silently and blows up blocks.">
+                    <h3>Creeper</h3>
+                    <p>Hostile Mob</p>
+                </div>
+                <div class="mob-card" data-desc="Enderman: Neutral mob, teleports, steals blocks. Aggro when you look at its face.">
+                    <h3>Enderman</h3>
+                    <p>Neutral Mob</p>
+                </div>
+                <div class="mob-card" data-desc="Pig: Passive mob, drops porkchop. Can ride with a carrot on a stick.">
+                    <h3>Pig</h3>
+                    <p>Passive Mob</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Minecraft Fan Site | All pages linked with vanilla JS & CSS</p>
+    </footer>
+
+    <script>
+        // Mob Card Click Popup JS
+        const mobCards = document.querySelectorAll('.mob-card');
+        mobCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const info = card.getAttribute('data-desc');
+                alert(info);
+            });
+        });
+    </script>
+</body>
+</html>
