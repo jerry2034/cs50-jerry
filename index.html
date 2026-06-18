@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MINECRAFT WORLD</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mobs.html">Mobs</a>
+            <a href="biomes.html">Biomes</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Welcome to Minecraft</h2>
+            <p>Minecraft is a sandbox video game created by Notch, full of building, exploration, survival and adventure. Mine blocks, craft items, fight mobs and discover unique biomes across infinite worlds!</p>
+
+            <div class="slider-box">
+                <div class="slide active">
+                    <h3>Survival Mode</h3>
+                    <p>Gather resources, fight monsters, and survive each night.</p>
+                </div>
+                <div class="slide">
+                    <h3>Creative Mode</h3>
+                    <p>Infinite blocks, flight, no enemies — build anything you imagine.</p>
+                </div>
+                <div class="slide">
+                    <h3>Multiplayer Servers</h3>
+                    <p>Play with friends, build together or compete in minigames.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Minecraft Fan Site | All pages linked with vanilla JS & CSS</p>
+    </footer>
+
+    <script>
+        // Auto Slider JS for Home Page
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 4000);
+    </script>
+</body>
+</html>
