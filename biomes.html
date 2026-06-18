@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Biomes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MINECRAFT BIOMES</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mobs.html">Mobs</a>
+            <a href="biomes.html">Biomes</a>
+        </nav>
+    </header>
 
+    <div class="container">
+        <div class="card">
+            <h2>Explore All Biomes</h2>
+            <p>Use buttons below to filter cold, warm, or forest biomes.</p>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Biomes</button>
+                <button class="filter-btn" data-filter="forest">Forest</button>
+                <button class="filter-btn" data-filter="cold">Cold</button>
+                <button class="filter-btn" data-filter="warm">Warm</button>
+            </div>
+
+            <div class="grid">
+                <div class="biome-card" data-type="forest">
+                    <h3>Oak Forest</h3>
+                    <p>Tall oak trees, lots of wolves and sheep.</p>
+                </div>
+                <div class="biome-card" data-type="cold">
+                    <h3>Snow Tundra</h3>
+                    <p>Snow everywhere, polar bears and strays spawn.</p>
+                </div>
+                <div class="biome-card" data-type="warm">
+                    <h3>Desert</h3>
+                    <p>Sand, cacti, husks and desert temples.</p>
+                </div>
+                <div class="biome-card" data-type="forest">
+                    <h3>Birch Forest</h3>
+                    <p>Pale birch trees, clean light-colored wood.</p>
+                </div>
+                <div class="biome-card" data-type="cold">
+                    <h3>Ice Spikes</h3>
+                    <p>Tall ice pillars, rare cold biome variant.</p>
+                </div>
+                <div class="biome-card" data-type="warm">
+                    <h3>Jungle</h3>
+                    <p>Dense trees, ocelots, parrots and melons.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Minecraft Fan Site | All pages linked with vanilla JS & CSS</p>
+    </footer>
+
+    <script>
+        // Biome Filter JS
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const biomeCards = document.querySelectorAll('.biome-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterVal = btn.dataset.filter;
+
+                biomeCards.forEach(card => {
+                    if(filterVal === 'all' || card.dataset.type === filterVal) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
